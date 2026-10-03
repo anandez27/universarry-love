@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk emilia sayanggg</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rosevelvet: {
+                            50: '#fdf2f4',
+                            100: '#fce7eb',
+                            200: '#f7cad5',
+                            300: '#f19fb3',
+                            400: '#e76887',
+                            500: '#d93a62',
+                            600: '#c2234c',
+                            700: '#a3173c',
+                            800: '#881736',
+                            900: '#731732',
+                            950: '#3f0717',
+                        },
+                        goldacc: {
+                            300: '#fbe29d',
+                            400: '#f7d070',
+                            500: '#e5b23d',
+                            600: '#c89228',
+                        }
+                    },
+                    fontFamily: {
+                        script: ['"Dancing Script"', 'cursive'],
+                        hand: ['"Caveat"', 'cursive'],
+                        vibes: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(43, 9, 20, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(244, 114, 182, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(244, 63, 94, 0.6), 0 0 30px rgba(225, 29, 72, 0.4);
+        }
+
+        .polaroid-card {
+            background: #fffdf9;
+            padding: 14px 14px 22px 14px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            perspective: 1000px;
+        }
+        .polaroid-card:hover {
+            transform: translateY(-10px) scale(1.02) !important;
+            box-shadow: 0 25px 45px rgba(225, 29, 72, 0.35);
+            z-index: 20;
+        }
+        .polaroid-card.reveal-pending {
+            opacity: 0;
+            translate: 0 28px;
+            transition: opacity 650ms ease, translate 650ms cubic-bezier(0.2, 0.7, 0.3, 1);
+        }
+        .polaroid-card.reveal-pending.reveal-visible {
+            opacity: 1;
+            translate: 0 0;
+        }
+        .date-response-option[aria-pressed="true"] {
+            background: rgba(217, 58, 98, 0.28);
+            border-color: rgba(247, 208, 112, 0.85);
+            box-shadow: 0 0 0 2px rgba(247, 208, 112, 0.16), 0 8px 24px rgba(217, 58, 98, 0.15);
+        }
+        .secret-video-frame {
+            display: block;
+            width: min(100%, 400px, 42.1875vh);
+            aspect-ratio: 9 / 16;
+            margin-inline: auto;
+        }
+        @supports (height: 100svh) {
+            .secret-video-frame {
+                width: min(100%, 400px, 42.1875svh);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .polaroid-card.reveal-pending {
+                opacity: 1;
+                translate: none;
+                transition: none;
+            }
+        }
+
+        .tape-rose {
+            background: rgba(244, 114, 182, 0.45);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .tape-gold {
+            background: rgba(251, 226, 157, 0.55);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.15); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.15); }
+            70% { transform: scale(1); }
+        }
+        .animate-heartbeat {
+            animation: heartbeat 2.2s infinite ease-in-out;
+        }
+
+        @keyframes floatingBurst {
+            0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-120px) scale(1.5) rotate(25deg); opacity: 0; }
+        }
+        .floating-heart-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            animation: floatingBurst 1.2s ease-out forwards;
+        }
+
+        .bar {
+            width: 3px;
+            background-color: #f43f5e;
+            border-radius: 2px;
+            animation: soundwave 1.2s infinite ease-in-out;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #120309;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #881736;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#0f0207] text-rose-100 font-sans antialiased selection:bg-rose-600 selection:text-white min-h-screen relative overflow-x-hidden">
+
+    <!-- CANVAS BACKGROUND PARTICLES -->
+    <canvas id="particleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-rose-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-red-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <!-- ENVELOPE OVERLAY -->
+    <div id="envelopeOverlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0a0105]/95 backdrop-blur-xl transition-opacity duration-1000">
+        <div class="text-center max-w-md w-full relative">
+            <div id="envelopeCard" class="group">
+                <div class="relative bg-gradient-to-br from-rose-950 to-[#2a0612] border border-rose-500/30 rounded-2xl p-8 shadow-[0_0_50px_rgba(217,58,98,0.25)] transition-all duration-500">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-full bg-rose-900/30 border-x border-rose-500/20 pointer-events-none"></div>
+                    
+                    <div class="relative z-10 py-6">
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-tr from-rose-700 to-rose-500 flex items-center justify-center shadow-lg shadow-rose-900/50 animate-heartbeat">
+                            <i class="fa-solid fa-lock text-3xl text-white"></i>
+                        </div>
+                        <p class="font-script text-2xl text-rose-300 mb-1">Kejutan Terkunci</p>
+                        <h2 id="envelopeNames" class="font-serif text-3xl text-white font-bold tracking-wide mb-4">Rian & Maya</h2>
+                        <p class="text-xs text-rose-200/80 mb-4">Masukkan tanggal jadian kita sayang</p>
+                        <form onsubmit="openEnvelope(event)" class="max-w-xs mx-auto" novalidate>
+                            <label for="envelopePinInput" class="block text-[10px] uppercase tracking-[0.2em] text-rose-300/70 mb-2">PIN tanggal jadian kita · tanggal+bulan 4 angka</label>
+                            <input id="envelopePinInput" type="password" inputmode="numeric" autocomplete="one-time-code" maxlength="4" pattern="[0-9]{4}" placeholder="••••" aria-describedby="envelopePinError" class="w-full bg-black/30 border border-rose-400/40 rounded-xl px-4 py-3 text-center font-mono text-xl tracking-[0.6em] text-white placeholder:text-rose-300/40 focus:outline-none focus:border-goldacc-400 focus:ring-2 focus:ring-goldacc-400/20">
+                            <p id="envelopePinError" class="min-h-5 mt-2 text-xs text-rose-300" role="alert" aria-live="polite"></p>
+                            <button type="submit" class="inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-gradient-to-r from-rose-600 to-rose-500 border border-rose-300/30 text-white text-sm font-semibold shadow-lg hover:brightness-110 active:scale-95 transition">
+                                <i class="fa-solid fa-key text-xs"></i>
+                                <span>Buka Kunci</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-goldacc-500 border-2 border-goldacc-300 flex items-center justify-center text-rose-950 font-serif font-bold text-xs shadow-md">
+                        <i class="fa-solid fa-heart text-xs"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-8 text-xs text-rose-400/60 tracking-wider uppercase font-medium">PIN adalah tanggal+bulan jadian kita yaa sayangg </p>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTENT -->
+    <div id="mainContent" class="relative z-10 opacity-0 transition-opacity duration-1000 min-h-screen flex flex-col justify-between">
+        
+        <header class="w-full px-6 py-6 max-w-6xl mx-auto flex items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-rose-900/60 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                    <i class="fa-solid fa-heart animate-pulse"></i>
+                </div>
+                <span class="font-script text-2xl text-rose-200 tracking-wide">Our Forever Story</span>
+            </div>
+        </header>
+
+        <section class="max-w-4xl mx-auto px-4 py-10 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full glass-card border border-rose-500/30">
+                <span id="heroSubtitle" class="text-xs uppercase font-semibold tracking-widest text-rose-300">Happy Mensiversary & Anniversary</span>
+            </div>
+            <h1 id="heroNames" class="font-serif text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 text-glow">
+                Emilia <span class="font-vibes text-rose-500 font-normal px-2">&</span> Abel
+            </h1>
+            <p id="heroQuote" class="font-serif italic text-lg md:text-xl text-rose-200/90 max-w-2xl mx-auto leading-relaxed">
+                "selamat universary sayanggg, semoga kita selalu bersama dan saling sayang selamanya."
+            </p>
+        </section>
+
+        <section id="counterSection" class="max-w-5xl mx-auto px-4 py-8 w-full">
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+
+                <!-- Card 1: Waktu Telah Bersama (Elapsed) -->
+                <div class="lg:col-span-7 glass-panel rounded-3xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between border border-rose-500/30 shadow-[0_0_40px_rgba(217,58,98,0.15)]">
+                    <div class="absolute -top-12 -right-12 w-40 h-40 bg-rose-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                    <!-- Card Header -->
+                    <div class="flex items-center justify-between mb-6 pb-4 border-b border-rose-500/20">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center shadow-lg shadow-rose-900/40">
+                                <i class="fa-solid fa-heart-pulse text-xl animate-pulse"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-serif font-bold text-xl text-white tracking-wide">Perjalanan Cinta Kita</h3>
+                                <p class="text-xs text-rose-300/80">Total waktu indah yang kita lalui bersama</p>
+                            </div>
+                        </div>
+                        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-200 text-xs font-semibold">
+                            <i class="fa-solid fa-infinity text-rose-400"></i> Selamanya
+                        </span>
+                    </div>
+
+                    <!-- Highlight Summary Banner -->
+                    <div class="bg-gradient-to-r from-rose-950/80 via-rose-900/50 to-rose-950/80 border border-rose-500/30 rounded-2xl p-4 text-center mb-6 shadow-inner">
+                        <p class="text-[11px] uppercase tracking-widest text-rose-300 font-semibold mb-1">Rangkuman Waktu Bersama</p>
+                        <div id="elapsedSummaryText" class="font-serif text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-rose-200 to-goldacc-300">
+                            0 Bulan (0 Tahun • 0 Bulan • 0 Hari)
+                        </div>
+                    </div>
+
+                    <!-- 6 Live Ticker Cards -->
+                    <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center mb-6">
+                        <div class="bg-rose-950/60 border border-rose-500/20 rounded-2xl p-2.5 flex flex-col justify-center">
+                            <span id="elapsedYears" class="font-serif text-xl md:text-2xl font-bold text-rose-100 block">0</span>
+                            <span class="text-[10px] uppercase text-rose-400 font-semibold tracking-wider">Tahun</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-rose-500/20 rounded-2xl p-2.5 flex flex-col justify-center">
+                            <span id="elapsedMonths" class="font-serif text-xl md:text-2xl font-bold text-rose-100 block">0</span>
+                            <span class="text-[10px] uppercase text-rose-400 font-semibold tracking-wider">Bulan</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-rose-500/20 rounded-2xl p-2.5 flex flex-col justify-center">
+                            <span id="elapsedDays" class="font-serif text-xl md:text-2xl font-bold text-rose-100 block">0</span>
+                            <span class="text-[10px] uppercase text-rose-400 font-semibold tracking-wider">Hari</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-rose-500/20 rounded-2xl p-2.5 flex flex-col justify-center">
+                            <span id="elapsedHours" class="font-serif text-xl md:text-2xl font-bold text-rose-200 block">0</span>
+                            <span class="text-[10px] uppercase text-rose-400 font-semibold tracking-wider">Jam</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-rose-500/20 rounded-2xl p-2.5 flex flex-col justify-center">
+                            <span id="elapsedMins" class="font-serif text-xl md:text-2xl font-bold text-rose-200 block">0</span>
+                            <span class="text-[10px] uppercase text-rose-400 font-semibold tracking-wider">Menit</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-rose-500/30 rounded-2xl p-2.5 flex flex-col justify-center relative overflow-hidden">
+                            <span id="elapsedSecs" class="font-serif text-xl md:text-2xl font-bold text-goldacc-400 block animate-pulse">0</span>
+                            <span class="text-[10px] uppercase text-goldacc-400 font-semibold tracking-wider flex items-center justify-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-goldacc-400 animate-ping"></span> Detik
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Footer Info -->
+                    <div class="flex items-center justify-between text-xs text-rose-300/80 pt-3 border-t border-rose-500/20 font-medium">
+                        <span><i class="fa-solid fa-calendar-heart mr-1.5 text-rose-400"></i> Tanggal Jadian:</span>
+                        <span id="startDateText" class="font-serif font-bold text-white bg-rose-900/60 px-3 py-1 rounded-full border border-rose-500/30">09 Mei 2026</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 glass-panel rounded-3xl p-6 md:p-8 relative overflow-hidden flex flex-col justify-between border border-goldacc-500/30 shadow-[0_0_40px_rgba(229,178,61,0.12)]">
+                    <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-goldacc-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+                    <!-- Card Header -->
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-goldacc-500/20">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-goldacc-600 to-amber-400 text-rose-950 flex items-center justify-center shadow-lg shadow-goldacc-900/40 font-bold">
+                            <i class="fa-solid fa-gift text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 id="targetCardHeaderTitle" class="font-serif font-bold text-xl text-white tracking-wide">Mensiversary / Anniversary</h3>
+                            <p id="targetCardHeaderSub" class="text-xs text-goldacc-300/80">Perayaan terdekat kita</p>
+                        </div>
+                    </div>
+
+                    <!-- Target Anniversary Progress Bar -->
+                    <div class="bg-rose-950/80 border border-goldacc-500/30 rounded-2xl p-4 mb-6 text-center">
+                        <div class="flex justify-between items-center text-xs text-goldacc-300 font-semibold mb-2">
+                            <span id="nextAnnivTitle">Menuju Perayaan berikutnya</span>
+                            <span id="nextAnnivPercent">0%</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-rose-950 rounded-full overflow-hidden border border-goldacc-500/30">
+                            <div id="nextAnnivProgressBar" class="h-full bg-gradient-to-r from-rose-500 via-pink-400 to-goldacc-400 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- 4 Countdown Ticker Cards -->
+                    <div class="grid grid-cols-4 gap-2 text-center mb-6">
+                        <div class="bg-rose-950/60 border border-goldacc-500/20 rounded-2xl p-3">
+                            <span id="nextDays" class="font-serif text-2xl font-bold text-goldacc-300 block">0</span>
+                            <span class="text-[10px] uppercase text-goldacc-400 font-semibold">Hari</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-goldacc-500/20 rounded-2xl p-3">
+                            <span id="nextHours" class="font-serif text-2xl font-bold text-goldacc-300 block">0</span>
+                            <span class="text-[10px] uppercase text-goldacc-400 font-semibold">Jam</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-goldacc-500/20 rounded-2xl p-3">
+                            <span id="nextMins" class="font-serif text-2xl font-bold text-goldacc-300 block">0</span>
+                            <span class="text-[10px] uppercase text-goldacc-400 font-semibold">Menit</span>
+                        </div>
+                        <div class="bg-rose-950/60 border border-goldacc-500/30 rounded-2xl p-3 relative overflow-hidden">
+                            <span id="nextSecs" class="font-serif text-2xl font-bold text-rose-400 block animate-pulse">0</span>
+                            <span class="text-[10px] uppercase text-rose-400 font-semibold">Detik</span>
+                        </div>
+                    </div>
+
+                    <!-- Footer Quote -->
+                    <div class="text-center pt-3 border-t border-goldacc-500/20">
+                        <p class="text-xs text-goldacc-200/90 italic font-serif">
+                            <i class="fa-solid fa-sparkles text-goldacc-400 mr-1"></i> Bersiap merayakan hari bahagia kita!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SURAT UNTUKMU SECTION -->
+        <section class="max-w-4xl mx-auto px-4 py-8 w-full">
+            <div class="glass-panel rounded-3xl p-8 md:p-12 relative">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h2 class="font-serif text-2xl md:text-3xl font-bold text-white">Surat Untuk emill sayang</h2>
+                </div>
+
+                <p id="typingLoveLetter" class="font-serif text-lg text-rose-100/90 leading-relaxed min-h-[120px] whitespace-pre-line italic">
+                    <!-- Typing text -->
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-rose-500/20 flex items-center justify-between">
+                    <span class="font-script text-2xl text-rose-300">Dengan Seluruh Cintaku asekk,</span>
+                    <span id="letterSender" class="font-serif font-bold text-rose-200">Abel</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOPLES HATI INTERAKTIF SECTION -->
+        <section class="max-w-4xl mx-auto px-4 py-8 w-full text-center">
+            <div class="glass-panel rounded-3xl p-8 relative">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-rose-500/20 border border-rose-400/30 flex items-center justify-center text-rose-400 text-3xl animate-bounce">
+                    <i class="fa-solid fa-jar"></i>
+                    <i class="fa-solid fa-heart text-rose-400 text-2xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Toples Hati</h3>
+                <p class="text-xs text-rose-300/80 max-w-md mx-auto mb-6">Klik tombol di bawah untuk mengambil satu pesan cinta acak dari dalam toples!</p>
+                
+                <div id="jarMessageDisplay" class="min-h-[70px] flex items-center justify-center p-4 bg-rose-950/50 rounded-2xl border border-rose-500/20 mb-6 transition-all duration-300">
+                    <span class="font-hand text-2xl text-rose-200">"Klik tombol di bawah untuk membuka pesan manis sayangg..."</span>
+                </div>
+
+                <button onclick="pickJarHeart()" class="px-6 py-3 bg-gradient-to-r from-rose-600 to-rose-500 text-white rounded-full font-medium text-xs shadow-lg hover:brightness-110 active:scale-95 transition flex items-center gap-2 mx-auto">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <span>Ambil Pesan Cinta</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- DATE INVITATION SECTION -->
+        <section class="max-w-4xl mx-auto px-4 py-8 w-full text-center">
+            <div class="glass-panel rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-goldacc-500/20 border border-goldacc-500/30 flex items-center justify-center text-goldacc-300 text-2xl">
+                    <i class="fa-solid fa-calendar-day"></i>
+                </div>
+                <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mb-2">sayanggg mauu keluarr gaa?</h3>
+                <p class="text-sm text-rose-200/80 mb-6">sayangg keluarr ma abel yuuppp. sayangg pilih mau kemanaa yaaa</p>
+
+                <div class="grid gap-4 sm:grid-cols-2 text-left mb-6">
+                    <label class="block text-xs font-semibold text-rose-200">
+                        <span class="flex items-center gap-2 mb-2"><i class="fa-solid fa-calendar text-rose-400"></i> Tanggal</span>
+                        <input id="datePlanDate" type="date" onchange="updateDateWhatsappLink()" class="w-full bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white focus:outline-none focus:border-goldacc-400">
+                    </label>
+                    <label class="block text-xs font-semibold text-rose-200">
+                        <span class="flex items-center gap-2 mb-2"><i class="fa-regular fa-clock text-rose-400"></i> Jam</span>
+                        <input id="datePlanTime" type="time" onchange="updateDateWhatsappLink()" class="w-full bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white focus:outline-none focus:border-goldacc-400">
+                    </label>
+                    <label class="block text-xs font-semibold text-rose-200">
+                        <span class="flex items-center gap-2 mb-2"><i class="fa-solid fa-location-dot text-rose-400"></i> Tujuan / kegiatan</span>
+                        <select id="datePlanActivity" onchange="updateDatePlanFields()" class="w-full bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white focus:outline-none focus:border-goldacc-400">
+                            <option value="">Pilih kegiatan</option>
+                            <option value="Pantai Piwang">Ke Pantai Piwang</option>
+                            <option value="Makan bakso">Makan bakso</option>
+                            <option value="Makan es krim">Makan es krim</option>
+                            <option value="Makan mie ayam">Makan mie ayam</option>
+                            <option value="Jalan-jalan naik motor">Jalan-jalan naik motor</option>
+                            <option value="other">Tempat / kegiatan lain</option>
+                        </select>
+                    </label>
+                    <div id="customActivityWrap" class="hidden">
+                        <label for="customDateActivity" class="block text-xs font-semibold text-rose-200 mb-2">Tulis tempat / kegiatan</label>
+                        <input id="customDateActivity" type="text" oninput="updateDateWhatsappLink()" placeholder="Contoh: cari sunset bareng" class="w-full bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white placeholder:text-rose-300/40 focus:outline-none focus:border-goldacc-400">
+                    </div>
+                    <label class="block text-xs font-semibold text-rose-200">
+                        <span class="flex items-center gap-2 mb-2"><i class="fa-solid fa-shirt text-rose-400"></i> Dress code</span>
+                        <select id="datePlanDressCode" onchange="updateDatePlanFields()" class="w-full bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white focus:outline-none focus:border-goldacc-400">
+                            <option value="">Pilih dress code</option>
+                            <option value="Casual / santai">Casual / santai</option>
+                            <option value="Warna senada">Warna senada</option>
+                            <option value="Nuansa hitam">Nuansa hitam</option>
+                            <option value="Nuansa pastel">Nuansa pastel</option>
+                            <option value="Bebas, yang penting nyaman">Bebas, yang penting nyaman</option>
+                            <option value="other">Dress code lain</option>
+                        </select>
+                    </label>
+                    <div id="customDressCodeWrap" class="hidden">
+                        <label for="customDateDressCode" class="block text-xs font-semibold text-rose-200 mb-2">Tulis dress code</label>
+                        <input id="customDateDressCode" type="text" oninput="updateDateWhatsappLink()" placeholder="Contoh: baju putih" class="w-full bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white placeholder:text-rose-300/40 focus:outline-none focus:border-goldacc-400">
+                    </div>
+                    <label class="block text-xs font-semibold text-rose-200 sm:col-span-2">
+                        <span class="flex items-center gap-2 mb-2"><i class="fa-solid fa-comment-dots text-rose-400"></i> Catatan tambahan <span class="font-normal text-rose-300/60">(opsional)</span></span>
+                        <textarea id="datePlanNotes" rows="2" oninput="updateDateWhatsappLink()" placeholder="Contoh: jemput aku atau bawa jaket ya" class="w-full resize-y bg-rose-950/70 border border-rose-500/30 rounded-xl px-3 py-3 text-sm text-white placeholder:text-rose-300/40 focus:outline-none focus:border-goldacc-400"></textarea>
+                    </label>
+                </div>
+
+                <div class="grid gap-3 md:grid-cols-3 text-left" role="group" aria-label="Pilihan jawaban ajakan kencan">
+                    <button type="button" class="date-response-option min-h-[88px] w-full rounded-xl bg-rose-950/60 border border-rose-500/30 p-4 text-sm text-rose-100 transition hover:bg-rose-900/60 flex items-center gap-3" aria-pressed="false" data-response="Mau banget! Ayo kita kencan ❤️" onclick="selectDateResponse(this)">
+                        <i class="fa-solid fa-heart text-rose-400 text-lg"></i>
+                        <span>Mau banget! yupp kitaa jalann</span>
+                    </button>
+                    <button type="button" class="date-response-option min-h-[88px] w-full rounded-xl bg-rose-950/60 border border-rose-500/30 p-4 text-sm text-rose-100 transition hover:bg-rose-900/60 flex items-center gap-3" aria-pressed="false" data-response="Mau, kamu yang pilih tanggal dan tempatnya ✨" onclick="selectDateResponse(this)">
+                        <i class="fa-solid fa-calendar-check text-goldacc-400 text-lg"></i>
+                        <span>Mauuu, sayangg pilih tanggal dan tempatnya</span>
+                    </button>
+                    <button type="button" class="date-response-option min-h-[88px] w-full rounded-xl bg-rose-950/60 border border-rose-500/30 p-4 text-sm text-rose-100 transition hover:bg-rose-900/60 flex items-center gap-3" aria-pressed="false" data-response="Belum bisa sekarang, tapi kita atur lain waktu ya 💌" onclick="selectDateResponse(this)">
+                        <i class="fa-solid fa-envelope text-rose-300 text-lg"></i>
+                        <span>Belum bisa sekarang, mungkin lain waktu</span>
+                    </button>
+                </div>
+
+                <a id="dateWhatsappLink" href="#" aria-disabled="true" onclick="return openDateInvitation(event)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 mt-6 px-6 py-3 rounded-full bg-[#25D366] text-white text-sm font-semibold shadow-lg opacity-50 transition hover:brightness-110">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Kirim Rencana via WhatsApp</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- KOTAK RAHASIA SECTION -->
+        <section class="max-w-3xl mx-auto px-4 py-8 w-full">
+            <div class="glass-panel rounded-3xl p-8 text-center relative overflow-hidden">
+                <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-goldacc-500/20 border border-goldacc-500/30 flex items-center justify-center text-goldacc-400 text-2xl">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-white mb-2">Kotak Rahasia kita</h3>
+                <p class="text-xs text-rose-300/80 mb-6">Masukkan tanggal spesial jadian kita sayanggg</p>
+
+                <div id="lockBoxForm" class="flex justify-center gap-2 max-w-xs mx-auto mb-4">
+                    <input type="password" id="secretPassInput" inputmode="numeric" maxlength="4" placeholder="tgl jadian kita" class="w-full bg-rose-950/80 border border-rose-500/40 rounded-xl px-4 py-2.5 text-center font-mono text-white tracking-widest focus:outline-none focus:border-goldacc-400">
+                    <button onclick="unlockSecretBox()" class="px-5 py-2.5 bg-goldacc-500 hover:bg-goldacc-400 text-rose-950 font-bold text-xs rounded-xl shadow-md transition">Buka</button>
+                </div>
+
+                <div id="secretMessageResult" class="hidden mt-6 space-y-4">
+                    <iframe
+                        id="secretVideo"
+                        data-src="https://drive.google.com/file/d/11Ca3SotHt-ge26ewUVCJtSSOjuSlwB2h/preview"
+                        title="Video romantis"
+                        class="secret-video-frame rounded-2xl border border-goldacc-500/30 bg-black shadow-xl"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                    <p id="secretContentText" class="font-script text-xl text-rose-200"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERI KENANGAN INDAH SECTION (VERTICAL POLAROID & STORY MODE) -->
+        <section class="max-w-6xl mx-auto px-4 py-10 w-full">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs font-medium mb-3">
+                    <i class="fa-solid fa-images text-rose-400"></i>
+                    <span>Galeri Emilia dan Abel</span>
+                </div>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-2">Galeri Foto Romantis Kita heheh</h2>
+                <p class="text-sm text-rose-300/80 max-w-lg mx-auto mb-6">Klik foto untuk melihat dalam Story Mode, atau tekan tombol <i class="fa-solid fa-heart text-rose-500 mx-1"></i> untuk mengirimkan percikan cinta!</p>
+
+                <div class="flex flex-wrap justify-center gap-2 mb-8" id="galleryFilterTabs">
+                    <button onclick="filterGallery('Semua')" class="filter-tab active px-4 py-1.5 rounded-full text-xs font-semibold bg-rose-600 text-white shadow-md border border-rose-400/40 transition">Semua</button>
+                    <button onclick="filterGallery('Kencan')" class="filter-tab px-4 py-1.5 rounded-full text-xs font-medium bg-rose-950/60 text-rose-300 hover:bg-rose-900 border border-rose-500/30 transition">Kencan</button>
+                    <button onclick="filterGallery('Liburan')" class="filter-tab px-4 py-1.5 rounded-full text-xs font-medium bg-rose-950/60 text-rose-300 hover:bg-rose-900 border border-rose-500/30 transition">Jalan-jalan</button>
+                    <button onclick="filterGallery('Spesial')" class="filter-tab px-4 py-1.5 rounded-full text-xs font-medium bg-rose-950/60 text-rose-300 hover:bg-rose-900 border border-rose-500/30 transition">Spesial</button>
+                </div>
+            </div>
+
+            <div id="galleryGrid" class="flex flex-col gap-10 max-w-xl mx-auto w-full">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="w-full text-center py-8 border-t border-rose-950/80 text-rose-400/60 text-xs">
+            <p>Made with Endless Love &bull; Happy Anniversary & Mensiversary</p>
+        </footer>
+    </div>
+
+    <!-- FLOATING MUSIC PLAYER -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <div class="glass-panel rounded-full p-2.5 pr-5 flex items-center gap-3 shadow-2xl border border-rose-500/40">
+            <button id="musicToggleBtn" type="button" aria-label="Putar musik" title="Putar musik" onclick="toggleAudio()" class="w-11 h-11 rounded-full bg-gradient-to-tr from-rose-600 to-rose-400 flex items-center justify-center text-white shadow-lg hover:scale-105 transition">
+                <i id="musicIcon" class="fa-solid fa-play text-sm ml-0.5"></i>
+            </button>
+            <div class="hidden sm:block">
+                <p id="songTitle" class="text-xs font-semibold text-white max-w-[130px] truncate">Romantic Melody</p>
+                <div class="flex items-center gap-1.5 mt-1">
+                    <div class="flex items-end gap-1 h-3" id="soundwaveContainer">
+                        <div class="bar opacity-40"></div>
+                        <div class="bar opacity-40"></div>
+                        <div class="bar opacity-40"></div>
+                        <div class="bar opacity-40"></div>
+                    </div>
+                    <span id="audioStatusText" class="text-[10px] text-rose-300/80">Klik untuk putar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORY VIEWER OVERLAY MODAL -->
+    <div id="storyViewerOverlay" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex flex-col items-center justify-between p-4 md:p-8" onclick="closeStoryViewer()">
+        <div class="w-full max-w-xl flex items-center justify-between text-white z-20" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-rose-500 to-goldacc-400 p-0.5">
+                    <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-xs font-bold text-rose-300">❤️</div>
+                </div>
+                <div>
+                    <h4 id="storyPartnerNames" class="font-serif text-sm font-bold text-white">Abel & Emilia</h4>
+                    <span id="storyDateText" class="text-[10px] text-rose-300/80">Momen Indah</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span id="storyIndexBadge" class="text-xs font-mono text-rose-300/80">1 / 3</span>
+                <button onclick="closeStoryViewer()" class="text-white/80 hover:text-white text-2xl transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <div class="relative max-w-2xl w-full h-[65vh] flex items-center justify-center my-auto" onclick="event.stopPropagation()">
+            <button onclick="prevStory()" class="absolute left-2 md:-left-12 z-30 w-12 h-12 rounded-full bg-white/10 hover:bg-rose-600 text-white flex items-center justify-center transition backdrop-blur-md">
+                <i class="fa-solid fa-chevron-left text-lg"></i>
+            </button>
+
+            <div class="w-full h-full flex flex-col items-center justify-center bg-slate-950/80 rounded-2xl border border-rose-500/30 overflow-hidden shadow-2xl relative">
+                <img id="storyViewerImg" src="" class="w-full h-full object-contain">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 text-center">
+                    <p id="storyViewerCaption" class="font-script text-3xl text-white drop-shadow-md mb-1"></p>
+                    <p id="storyViewerSubtext" class="font-serif italic text-xs text-rose-200/90"></p>
+                </div>
+            </div>
+
+            <button onclick="nextStory()" class="absolute right-2 md:-right-12 z-30 w-12 h-12 rounded-full bg-white/10 hover:bg-rose-600 text-white flex items-center justify-center transition backdrop-blur-md">
+                <i class="fa-solid fa-chevron-right text-lg"></i>
+            </button>
+        </div>
+
+        <div class="w-full max-w-xl flex items-center justify-center gap-4 text-white z-20 pb-2" onclick="event.stopPropagation()">
+            <button onclick="triggerStoryHeart(event)" class="px-6 py-2.5 rounded-full bg-rose-600 hover:bg-rose-500 text-white font-medium text-xs shadow-lg flex items-center gap-2 active:scale-95 transition">
+                <i class="fa-solid fa-heart"></i>
+                <span>Kirim Cinta ❤️</span>
+            </button>
+        </div>
+    </div>
+
+    <audio id="customAudioElement" preload="auto" loop class="hidden">
+        <source src="./music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const defaultConfig = {
+            partner1: "Abel",
+            partner2: "Emilia",
+            startDate: "2026-05-09",
+            celebrationMode: "monthly",
+            heroQuote: '"Setiap bersama sayang adalah momen paling bahagia dalam hidup abel"',
+            loveLetter: "Happy Mensiversary & Anniversary, sayanggg... Abel sayangg banget ma emill. Semoga kita selalu bahagia dan langgeng sampai tua nanti yaaa. Terima kasih udah jadi bagian terindah dalam hidup abel, dan selalu sabar menghadapi abel yang kadang ngeselin. Semoga kita bisa terus saling mendukung, mencintai, dan membuat kenangan indah bersama. Love you forever and always, sayanggg ❤️",
+            secretMessage: "Hadiah utamamu adalah: boleh cium sepuas dirimu sayangg hahah",
+            customAudioUrl: "",
+            jarNotes: [
+                "Tau gaa? senyan sayangg tu maniss kalii.",
+                "abell sayangg kali maa emill.",
+                "sayangg jangan macam macam yaaa.. muahhhhh muahh.",
+                "bolehh gaa abell cium sayangg soalnya sayang cantik bangett... muahh muahh.",
+                "apaa beda sayang sama lukisan? kalau lukisan makin lama makin antik kalau sayang makin lama makin cantik.",
+                "sayanggg cantikk bangettt, abell sayangg banget maa emill.",
+                "sayangg maniss kalii, abell sayangg banget maa emill.",
+            ],
+            timeline: [
+                { 
+                    chapter: "Babak 01",
+                    date: "09 Mei 2026", 
+                    title: "Pertama Kali Kenalan", 
+                    desc: "Momen manis saat pertama kali kita bertukar senyum dan memulai obrolan hangat.",
+                    image: "image1.jpg",
+                    flowerType: "Mawar Merah Cinta",
+                    iconClass: "fa-rose",
+                    positionClass: "top-4 left-1/2 -translate-x-1/2 animate-flower-1"
+                },
+                { 
+                    chapter: "Babak 02",
+                    date: "15 Nov 2026", 
+                    title: "Kencan Pertama Kita", 
+                    desc: "Nonton bioskop bareng, ngobrol canggung tapi bikin deg-degan bahagia seharian.",
+                    image: "image2.jpg",
+                    flowerType: "Kuntum Sakura Mekar",
+                    iconClass: "fa-spa",
+                    positionClass: "top-20 left-12 animate-flower-2"
+                },
+                { 
+                    chapter: "Babak 03",
+                    date: "24 Nov 2026", 
+                    title: "Mensiversary Ke-1", 
+                    desc: "Perayaan 1 bulan pertama kita jadian, penuh bunga dan janji manis.",
+                    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+                    flowerType: "Bunga Tulip Impian",
+                    iconClass: "fa-seedling",
+                    positionClass: "top-20 right-12 animate-flower-1"
+                },
+                { 
+                    chapter: "Babak 04",
+                    date: "Hari Ini & Selamanya", 
+                    title: "Abadi Dalam Cinta", 
+                    desc: "Perjalanan kita masih panjang, dan setiap harinya tumbuh semakin indah seperti bunga yang bermekaran.",
+                    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
+                    flowerType: "Mawar Emas Abadi",
+                    iconClass: "fa-crown",
+                    positionClass: "top-36 left-1/2 -translate-x-1/2 animate-flower-2"
+                }
+            ],
+            photos: [
+                { 
+                    url: "foto1.jpg", 
+                    caption: "abel sayangg emill", 
+                    date: "mei 2026",
+                    category: "Kencan",
+                    likes: 12
+                },
+                { 
+                    url: "foto2.jpg", 
+                    caption: "emil sayang abel", 
+                    date: "juni 2026",
+                    category: "Liburan",
+                    likes: 18
+                },
+                { 
+                    url: "foto3.jpg", 
+                    caption: "makasihh sayangg", 
+                    date: "juni 2026",
+                    category: "Spesial",
+                    likes: 24
+                },
+                { 
+                    url: "foto4.jpg", 
+                    caption: "maniss banget", 
+                    date: "juli 2026",
+                    category: "Kencan",
+                    likes: 15
+                },
+                { 
+                    url: "foto5.jpg", 
+                    caption: "wopyuuu", 
+                    date: "juli 2026",
+                    category: "Liburan",
+                    likes: 20
+                },
+                { 
+                    url: "foto6.jpg", 
+                    caption: "i love youuu sayangg", 
+                    date: "agustus 2026",
+                    category: "Spesial",
+                    likes: 30
+                },
+                { 
+                    url: "foto7.jpg", 
+                    caption: "sayanggg manisss", 
+                    date: "agustus 2026",
+                    category: "Kencan",
+                    likes: 22
+                },
+                { 
+                    url: "foto8.jpg", 
+                    caption: "sayangggggg emilll", 
+                    date: "agustus 2026",
+                    category: "Liburan",
+                    likes: 28
+                },
+                { 
+                    url: "foto9.jpg", 
+                    caption: "i love youuu sayangg", 
+                    date: "agustus 2026",
+                    category: "Spesial",
+                    likes: 35
+                }
+            ]
+        };
+
+        let appConfig = JSON.parse(localStorage.getItem('anniversary_config')) || defaultConfig;
+        let currentActiveCategory = "Semua";
+        let activeStoryIndex = 0;
+        let galleryRevealObserver = null;
+        let isPlayingAudio = false;
+
+        function updateAudioControls(playing) {
+            isPlayingAudio = playing;
+            const button = document.getElementById('musicToggleBtn');
+            button.setAttribute('aria-label', playing ? 'Jeda musik' : 'Putar musik');
+            button.title = playing ? 'Jeda musik' : 'Putar musik';
+            document.getElementById('musicIcon').className = playing
+                ? "fa-solid fa-pause text-sm"
+                : "fa-solid fa-play text-sm ml-0.5";
+            document.getElementById('audioStatusText').textContent = playing
+                ? "Sedang diputar"
+                : "Klik untuk putar";
+        }
+
+        function playAudio() {
+            const customAudio = document.getElementById('customAudioElement');
+            const customUrl = (appConfig.customAudioUrl || '').trim();
+            const localSource = new URL('music.mp3', document.baseURI).href;
+            const resolvedSource = customUrl ? new URL(customUrl, document.baseURI).href : localSource;
+            if (customUrl && customAudio.src !== resolvedSource) {
+                customAudio.src = resolvedSource;
+            } else if (!customUrl && customAudio.hasAttribute('src')) {
+                customAudio.removeAttribute('src');
+                customAudio.load();
+            }
+
+            const playRequest = customAudio.play();
+            if (playRequest) {
+                playRequest.then(() => updateAudioControls(true))
+                    .catch(error => {
+                        if (resolvedSource !== localSource) {
+                            customAudio.removeAttribute('src');
+                            customAudio.load();
+                            customAudio.play()
+                                .then(() => updateAudioControls(true))
+                                .catch(fallbackError => showAudioError(fallbackError));
+                            return;
+                        }
+                        showAudioError(error);
+                    });
+            } else {
+                updateAudioControls(true);
+            }
+        }
+
+        function showAudioError(error) {
+            updateAudioControls(false);
+            const mediaError = document.getElementById('customAudioElement').error;
+            const status = error.name === 'NotAllowedError'
+                ? 'Browser menahan audio, tekan putar lagi'
+                : mediaError
+                    ? `Audio gagal dimuat (kode ${mediaError.code})`
+                    : `Audio gagal dimuat (${error.name})`;
+            document.getElementById('audioStatusText').textContent = status;
+            document.getElementById('musicToggleBtn').title = status;
+            showToast(status);
+            console.error('Audio tidak dapat diputar:', error);
+        }
+
+        function toggleAudio() {
+            const customAudio = document.getElementById('customAudioElement');
+            if (isPlayingAudio) {
+                customAudio.pause();
+                updateAudioControls(false);
+            } else {
+                playAudio();
+            }
+        }
+
+        function pickJarHeart() {
+            const display = document.getElementById('jarMessageDisplay');
+            const notes = appConfig.jarNotes;
+            const randomNote = notes[Math.floor(Math.random() * notes.length)];
+            display.innerHTML = `<span class="font-hand text-2xl text-rose-300 animate-pulse">"${randomNote}"</span>`;
+        }
+
+        function selectDateResponse(selectedOption) {
+            document.querySelectorAll('.date-response-option').forEach(option => {
+                option.setAttribute('aria-pressed', option === selectedOption ? 'true' : 'false');
+            });
+
+            updateDateWhatsappLink();
+        }
+
+        function updateDatePlanFields() {
+            const activity = document.getElementById('datePlanActivity');
+            const dressCode = document.getElementById('datePlanDressCode');
+            document.getElementById('customActivityWrap').classList.toggle('hidden', activity.value !== 'other');
+            document.getElementById('customDressCodeWrap').classList.toggle('hidden', dressCode.value !== 'other');
+            updateDateWhatsappLink();
+        }
+
+        function updateDateWhatsappLink() {
+            const selectedOption = document.querySelector('.date-response-option[aria-pressed="true"]');
+            const date = document.getElementById('datePlanDate').value;
+            const time = document.getElementById('datePlanTime').value;
+            const activitySelect = document.getElementById('datePlanActivity');
+            const activity = activitySelect.value === 'other'
+                ? document.getElementById('customDateActivity').value.trim()
+                : activitySelect.value;
+            const dressCodeSelect = document.getElementById('datePlanDressCode');
+            const dressCode = dressCodeSelect.value === 'other'
+                ? document.getElementById('customDateDressCode').value.trim()
+                : dressCodeSelect.value;
+            const whatsappLink = document.getElementById('dateWhatsappLink');
+
+            const isComplete = selectedOption && date && time && activity && dressCode;
+            whatsappLink.setAttribute('aria-disabled', String(!isComplete));
+            whatsappLink.classList.toggle('opacity-50', !isComplete);
+            if (!isComplete) {
+                whatsappLink.href = '#';
+                return;
+            }
+
+            const formattedDate = new Date(`${date}T00:00:00`).toLocaleDateString('id-ID', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            const notes = document.getElementById('datePlanNotes').value.trim();
+            const message = [
+                `Hai sayang! Aku pilih: ${selectedOption.dataset.response}`,
+                '',
+                'Rencana kencan kita:',
+                `Tanggal: ${formattedDate}`,
+                `Jam: ${time}`,
+                `Tujuan / kegiatan: ${activity}`,
+                `Dress code: ${dressCode}`,
+                notes ? `Catatan tambahan: ${notes}` : ''
+            ].filter(Boolean).join('\n');
+            whatsappLink.href = `https://wa.me/6285174454945?text=${encodeURIComponent(message)}`;
+        }
+
+        function openDateInvitation(event) {
+            const whatsappLink = document.getElementById('dateWhatsappLink');
+            if (whatsappLink.getAttribute('aria-disabled') === 'true') {
+                event.preventDefault();
+                showToast('Lengkapi pilihan jawaban, tanggal, jam, kegiatan, dan dress code dulu ya!');
+                return false;
+            }
+            return true;
+        }
+
+        function unlockSecretBox() {
+            const input = document.getElementById('secretPassInput').value;
+            if (input === '0905') {
+                document.getElementById('lockBoxForm').classList.add('hidden');
+                document.getElementById('secretMessageResult').classList.remove('hidden');
+                const secretVideo = document.getElementById('secretVideo');
+                secretVideo.src = secretVideo.dataset.src;
+            } else {
+                showToast("Kode sandi salah! Masukkan tanggal jadian ya!");
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = "fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-rose-900 border border-rose-400 text-white px-5 py-2.5 rounded-full text-xs font-semibold shadow-2xl animate-bounce";
+            toast.textContent = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2500);
+        }
+
+        function openEnvelope(event) {
+            event.preventDefault();
+            const pinInput = document.getElementById('envelopePinInput');
+            const errorMessage = document.getElementById('envelopePinError');
+            const [, , month, day] = (appConfig.startDate || '').match(/^(\d{4})-(\d{2})-(\d{2})$/) || [];
+            const expectedPin = day && month ? `${day}${month}` : '';
+
+            if (pinInput.value.replace(/\D/g, '') !== expectedPin) {
+                errorMessage.textContent = 'PIN salahh. sayangg lupaa yaa tanggal jadian kitaa? 😢';
+                pinInput.setAttribute('aria-invalid', 'true');
+                pinInput.focus();
+                return;
+            }
+
+            errorMessage.textContent = '';
+            pinInput.removeAttribute('aria-invalid');
+            playAudio();
+            document.getElementById('envelopeOverlay').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('envelopeOverlay').style.display = 'none';
+                document.getElementById('mainContent').style.opacity = '1';
+                typeWriterEffect();
+            }, 800);
+        }
+
+        function typeWriterEffect() {
+            const target = document.getElementById('typingLoveLetter');
+            target.textContent = "";
+            let i = 0;
+            const text = appConfig.loveLetter;
+            function type() {
+                if (i < text.length) {
+                    target.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 35);
+                }
+            }
+            type();
+        }
+
+        function spawnFloatingHeart(x, y) {
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart-particle text-rose-500 text-2xl';
+            heart.innerHTML = '<i class="fa-solid fa-heart"></i>';
+            heart.style.left = `${x - 12}px`;
+            heart.style.top = `${y - 12}px`;
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 1200);
+        }
+
+        function likePhoto(index, event) {
+            event.stopPropagation();
+            appConfig.photos[index].likes = (appConfig.photos[index].likes || 0) + 1;
+            
+            for(let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const offsetX = (Math.random() - 0.5) * 40;
+                    const offsetY = (Math.random() - 0.5) * 20;
+                    spawnFloatingHeart(event.clientX + offsetX, event.clientY + offsetY);
+                }, i * 100);
+            }
+
+            renderGallery();
+        }
+
+        function filterGallery(category) {
+            currentActiveCategory = category;
+            
+            const tabs = document.querySelectorAll('#galleryFilterTabs button');
+            tabs.forEach(tab => {
+                if(tab.textContent.trim() === category) {
+                    tab.className = "filter-tab active px-4 py-1.5 rounded-full text-xs font-semibold bg-rose-600 text-white shadow-md border border-rose-400/40 transition";
+                } else {
+                    tab.className = "filter-tab px-4 py-1.5 rounded-full text-xs font-medium bg-rose-950/60 text-rose-300 hover:bg-rose-900 border border-rose-500/30 transition";
+                }
+            });
+
+            renderGallery();
+        }
+
+        function renderGallery() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            const filteredPhotos = currentActiveCategory === "Semua" 
+                ? appConfig.photos 
+                : appConfig.photos.filter(p => p.category === currentActiveCategory);
+
+            const rotations = ['-rotate-1', 'rotate-1', '-rotate-2', 'rotate-2'];
+
+            galleryGrid.innerHTML = filteredPhotos.map((p, idx) => {
+                const rot = rotations[idx % rotations.length];
+                const realIndex = appConfig.photos.indexOf(p);
+                return `
+                    <div class="polaroid-card ${rot} rounded-sm cursor-pointer relative group w-full" onclick="openStoryViewer(${realIndex})">
+                        <div class="${idx % 2 === 0 ? 'tape-rose' : 'tape-gold'} absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-6 z-10 rounded-sm"></div>
+                        
+                        <div class="w-full h-80 md:h-96 overflow-hidden rounded-sm bg-slate-900 relative">
+                            <img src="${p.url}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="px-3 py-1.5 rounded-full bg-white/90 text-slate-900 text-xs font-bold shadow-lg flex items-center gap-1.5">
+                                    <i class="fa-solid fa-expand text-rose-600"></i> Story Mode
+                                </span>
+                            </div>
+                            ${p.category ? `<span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-rose-950/80 text-[10px] text-rose-200 border border-rose-500/30">${p.category}</span>` : ''}
+                        </div>
+
+                        <div class="mt-3 flex items-start justify-between px-1">
+                            <div>
+                                <p class="font-hand text-2xl text-slate-800 font-bold leading-tight">${p.caption}</p>
+                                <p class="text-[11px] font-sans text-slate-500 mt-0.5"><i class="fa-solid fa-calendar-day text-rose-500 mr-1"></i>${p.date || 'Memori Indah'}</p>
+                            </div>
+                            <button onclick="likePhoto(${realIndex}, event)" class="p-2 rounded-full hover:bg-rose-50 text-rose-500 transition flex items-center gap-1 group/btn">
+                                <i class="fa-solid fa-heart text-base transition transform group-hover/btn:scale-125"></i>
+                                <span class="text-xs font-bold text-slate-700">${p.likes || 0}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            if (!('IntersectionObserver' in window)) return;
+            if (galleryRevealObserver) galleryRevealObserver.disconnect();
+
+            galleryRevealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('reveal-visible');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.15 });
+
+            galleryGrid.querySelectorAll('.polaroid-card').forEach((card, index) => {
+                card.classList.add('reveal-pending');
+                card.style.transitionDelay = `${Math.min(index, 5) * 90}ms`;
+                galleryRevealObserver.observe(card);
+            });
+        }
+
+        function openStoryViewer(index) {
+            activeStoryIndex = index;
+            updateStoryModal();
+            document.getElementById('storyViewerOverlay').classList.remove('hidden');
+        }
+
+        function closeStoryViewer() {
+            document.getElementById('storyViewerOverlay').classList.add('hidden');
+        }
+
+        function updateStoryModal() {
+            const photo = appConfig.photos[activeStoryIndex];
+            document.getElementById('storyPartnerNames').textContent = `${appConfig.partner1} & ${appConfig.partner2}`;
+            document.getElementById('storyDateText').textContent = photo.date || "Momen Indah";
+            document.getElementById('storyIndexBadge').textContent = `${activeStoryIndex + 1} / ${appConfig.photos.length}`;
+            document.getElementById('storyViewerImg').src = photo.url;
+            document.getElementById('storyViewerCaption').textContent = photo.caption;
+            document.getElementById('storyViewerSubtext').textContent = `Kenangan Kategori: ${photo.category || 'Momen Spesial'}`;
+        }
+
+        function nextStory() {
+            activeStoryIndex = (activeStoryIndex + 1) % appConfig.photos.length;
+            updateStoryModal();
+        }
+
+        function prevStory() {
+            activeStoryIndex = (activeStoryIndex - 1 + appConfig.photos.length) % appConfig.photos.length;
+            updateStoryModal();
+        }
+
+        function triggerStoryHeart(e) {
+            spawnFloatingHeart(e.clientX, e.clientY);
+            likePhoto(activeStoryIndex, e);
+        }
+
+        function renderUI() {
+            document.getElementById('envelopeNames').textContent = `${appConfig.partner1} & ${appConfig.partner2}`;
+            document.getElementById('heroNames').innerHTML = `${appConfig.partner1} <span class="font-vibes text-rose-500 font-normal px-2">&</span> ${appConfig.partner2}`;
+            document.getElementById('heroQuote').textContent = appConfig.heroQuote;
+            document.getElementById('letterSender').textContent = appConfig.partner1;
+            document.getElementById('secretContentText').textContent = appConfig.secretMessage;
+
+            renderGallery();
+        }
+
+        function updateCounters() {
+            if (!appConfig.startDate) return;
+            const start = new Date(appConfig.startDate);
+            const now = new Date();
+
+            let years = now.getFullYear() - start.getFullYear();
+            let months = now.getMonth() - start.getMonth();
+            let days = now.getDate() - start.getDate();
+
+            if (days < 0) {
+                months--;
+                const prevMonthLastDay = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+                days += prevMonthLastDay;
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const totalMonthsTogether = (years * 12) + months;
+            const hours = now.getHours();
+            const mins = now.getMinutes();
+            const secs = now.getSeconds();
+
+            document.getElementById('elapsedYears').textContent = years;
+            document.getElementById('elapsedMonths').textContent = months;
+            document.getElementById('elapsedDays').textContent = days;
+            document.getElementById('elapsedHours').textContent = hours;
+            document.getElementById('elapsedMins').textContent = mins;
+            document.getElementById('elapsedSecs').textContent = secs;
+
+            document.getElementById('elapsedSummaryText').textContent = `Total ${totalMonthsTogether} Bulan Bersama (${years} Thn • ${months} Bln • ${days} Hari)`;
+
+            const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('startDateText').textContent = start.toLocaleDateString('id-ID', dateOptions);
+
+            const mode = appConfig.celebrationMode || "monthly";
+            let targetDate, targetTitle, targetCountText, lastMilestoneDate;
+
+            if (mode === "monthly" || mode === "auto") {
+                let targetYear = now.getFullYear();
+                let targetMonth = now.getMonth();
+                let day = Math.min(start.getDate(), new Date(targetYear, targetMonth + 1, 0).getDate());
+
+                targetDate = new Date(targetYear, targetMonth, day);
+                lastMilestoneDate = new Date(targetYear, targetMonth - 1, day);
+
+                if (now >= targetDate) {
+                    lastMilestoneDate = new Date(targetDate);
+                    targetMonth++;
+                    if (targetMonth > 11) {
+                        targetMonth = 0;
+                        targetYear++;
+                    }
+                    day = Math.min(start.getDate(), new Date(targetYear, targetMonth + 1, 0).getDate());
+                    targetDate = new Date(targetYear, targetMonth, day);
+                }
+
+                const nextMonthNum = totalMonthsTogether + 1;
+                targetTitle = `Menuju Mensiversary Ke-${nextMonthNum}`;
+                targetCountText = `Perayaan Bulanan Ke-${nextMonthNum}`;
+                document.getElementById('targetCardHeaderTitle').textContent = "Mensiversary Bulanan";
+                document.getElementById('targetCardHeaderSub').textContent = `Momen Spesial Bulan Ke-${nextMonthNum}`;
+
+            } else {
+                let nextAnniv = new Date(now.getFullYear(), start.getMonth(), start.getDate());
+                let annivCount = now.getFullYear() - start.getFullYear();
+                lastMilestoneDate = new Date(nextAnniv.getFullYear() - 1, start.getMonth(), start.getDate());
+
+                if (now >= nextAnniv) {
+                    lastMilestoneDate = new Date(nextAnniv);
+                    nextAnniv.setFullYear(now.getFullYear() + 1);
+                    annivCount++;
+                }
+
+                targetDate = nextAnniv;
+                targetTitle = `Menuju Anniversary Ke-${annivCount}`;
+                targetCountText = `Tahun Ke-${annivCount}`;
+                document.getElementById('targetCardHeaderTitle').textContent = "Anniversary Tahunan";
+                document.getElementById('targetCardHeaderSub').textContent = `Perayaan Tahun Ke-${annivCount}`;
+            }
+
+            const nextDiff = Math.max(0, targetDate - now);
+            document.getElementById('nextDays').textContent = Math.floor(nextDiff / (1000 * 60 * 60 * 24));
+            document.getElementById('nextHours').textContent = Math.floor((nextDiff / (1000 * 60 * 60)) % 24);
+            document.getElementById('nextMins').textContent = Math.floor((nextDiff / 1000 / 60) % 60);
+            document.getElementById('nextSecs').textContent = Math.floor((nextDiff / 1000) % 60);
+
+            const totalPeriodMs = targetDate - lastMilestoneDate;
+            const elapsedPeriodMs = now - lastMilestoneDate;
+            const percent = Math.min(100, Math.max(0, Math.floor((elapsedPeriodMs / totalPeriodMs) * 100)));
+
+            document.getElementById('nextAnnivTitle').textContent = targetTitle;
+            document.getElementById('nextAnnivPercent').textContent = `${percent}%`;
+            document.getElementById('nextAnnivProgressBar').style.width = `${percent}%`;
+        }
+
+        function initParticles() {
+            const canvas = document.getElementById('particleCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = Array.from({ length: 35 }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 0.7 + 0.5,
+                speedY: -(Math.random() * 0.8 + 0.2),
+                opacity: Math.random() * 0.35 + 0.15,
+                rotation: (Math.random() - 0.5) * 0.5
+            }));
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.y += p.speedY;
+                    if (p.y < 0) p.y = canvas.height;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rotation);
+                    ctx.scale(p.size, p.size);
+                    ctx.fillStyle = `rgba(244, 114, 182, ${p.opacity})`;
+                    ctx.beginPath();
+                    ctx.moveTo(0, 9);
+                    ctx.bezierCurveTo(-12, 1, -10, -8, -4, -8);
+                    ctx.bezierCurveTo(-1, -8, 0, -5, 0, -3);
+                    ctx.bezierCurveTo(2, -8, 10, -8, 10, -2);
+                    ctx.bezierCurveTo(10, 3, 5, 7, 0, 9);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if(!document.getElementById('storyViewerOverlay').classList.contains('hidden')) {
+                if(e.key === 'ArrowRight') nextStory();
+                if(e.key === 'ArrowLeft') prevStory();
+                if(e.key === 'Escape') closeStoryViewer();
+            }
+        });
+
+        window.onload = function() {
+            renderUI();
+            initParticles();
+            updateCounters();
+            playAudio();
+            setInterval(updateCounters, 1000);
+        };
+    </script>
+</body>
+</html>
