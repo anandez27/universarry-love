@@ -496,10 +496,15 @@
                         id="secretVideo"
                         data-src="https://drive.google.com/file/d/11Ca3SotHt-ge26ewUVCJtSSOjuSlwB2h/preview"
                         title="Video romantis"
+                        crossorigin="anonymous"
                         class="secret-video-frame rounded-2xl border border-goldacc-500/30 bg-black shadow-xl"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
+                        controls
+                        controlsList="nodownload noplaybackrate noremoteplayback"
+                        disablePictureInPicture
+                        disableRemotePlayback
+                        playsinline
+                        preload="none">
+                        Browser kamu belum mendukung pemutar video.
                     </iframe>
                     <p id="secretContentText" class="font-script text-xl text-rose-200"></p>
                 </div>
@@ -888,6 +893,15 @@
                 document.getElementById('secretMessageResult').classList.remove('hidden');
                 const secretVideo = document.getElementById('secretVideo');
                 secretVideo.src = secretVideo.dataset.src;
+                secretVideo.play().catch(error => {
+                    const mediaError = secretVideo.error;
+                    showToast(error.name === 'NotAllowedError'
+                        ? 'Browser menahan autoplay. Tekan tombol putar pada video ya!'
+                        : mediaError
+                            ? `Video gagal dimuat (kode ${mediaError.code})`
+                            : 'Video gagal dimuat. Periksa akses file Google Drive.');
+                    console.error('Video tidak dapat diputar:', error);
+                });
             } else {
                 showToast("Kode sandi salah! Masukkan tanggal jadian ya!");
             }
